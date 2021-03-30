@@ -1,4 +1,4 @@
-#[cfg(test)]
+//#[cfg(test)]
 /*
 mod tests {
     #[test]
@@ -7,20 +7,42 @@ mod tests {
     }
 }*/
 
-mod phaktionz {
-    //! The Rules Methods are based on describing various aspects of the game
-    /// pub struct Card{
-    ///     pub name: String // This gives the type of Card it is ex. Striker
-    ///     pub description: String // This gives a description of what type does
-    /// }
+pub mod phaktionz {
+//! Phaktionz CLI is goaled to bring information on Phaktionz directly to your system
+pub mod rules{
+//! The Rules Module is based on describing various aspects of the game
+/// ```
+/// pub struct Card{
+///     pub name: String // This gives the type of Card it is ex. Striker
+///     pub description: String // This gives a description of what type does
+/// }
+/// ```
     pub struct Card {
         pub name: String,
         pub description: String,
     }
-    
+
+/// This is used to describe the types in Summons and Invocations  
+/// - Summon Types: 
+///     - Striker
+///     - Tech  
+/// - Invocation Types: 
+///     - Regular
+///     - Counter
+///     - Weapon
+///     - Realm  
+/// 
+/// If a new card type would be made, then a change could look like this: 
+/// ```rust
+/// // Before 
+/// pub fn types(summmons: [Card; 2], invocations: [Card; 4])
+/// // After (example new summon type)
+/// pub fn types(summmons: [Card; 3], invocations: [Card; 4])
+/// ```
     pub fn types(summmons: [Card; 2], invocations: [Card; 4]) {
         println!("Summmons: ");
         let mut i = 0;
+        // This will cycle through all the struct Card fields
         while i < 2 {
             println!("\t{}: {}", summmons[i].name, summmons[i].description);
             i += 1;
@@ -32,7 +54,7 @@ mod phaktionz {
             i += 1;
         }
     }
-    
+  
     pub fn game() {
         let mech: [String; 5] = [
             String::from("• When a Summon battles it becomes disabled (turned sideways)"),
@@ -171,4 +193,5 @@ mod phaktionz {
             list();
         }
     }
-    }
+}
+}
