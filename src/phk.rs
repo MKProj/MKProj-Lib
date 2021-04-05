@@ -35,18 +35,14 @@ pub mod phaktionz {
         /// ```rust
         ///     pub fn types(summmons: [Card; 2], invocations: [Card; 4]) {
         ///         println!("Summmons: ");
-        ///         let mut i = 0;
-        ///         // This will cycle through all the struct Card fields
-        ///         while i < 2 {
-        ///             println!("\t{}: {}", summmons[i].name, summmons[i].description);
-        ///             i += 1;
-        ///         }
-        ///         i = 0;
-        ///         println!("Invocations");
-        ///         while i < 4 {
-        ///             println!("\t{}: {}", invocations[i].name, invocations[i].description);
-        ///             i += 1;
-        ///         }
+        ///        // This will cycle through all the struct Card fields
+        ///        for i in 0..summmons.len() {
+        ///            println!("\t{}: {}", summmons[i].name, summmons[i].description);
+        ///        }
+        ///        println!("Invocations");
+        ///        for i in 0..invocations.len() {
+        ///            println!("\t{}: {}", invocations[i].name, invocations[i].description);
+        ///        }
         /// }
         /// ```
         pub fn types(summmons: [Card; 2], invocations: [Card; 4]) {
@@ -70,11 +66,9 @@ pub mod phaktionz {
         ///         String::from("• If a card’s ability were to break one of these rules, the card’s ability takes precedence."),
         ///         String::from( "• When battling, a Player takes DMG equal to the difference between the Summons.\n\t– If a Summon that battles has less DMG than the opposing, no DMG is dealt.\n\t– If a Summon that battles has more DMG than the opposing, the Opponent takes the difference, and the Summon is demoted, except if it’s Tier 3+.")
         ///     ];
-        ///     let mut i = 0;
-        ///     while i < 5 {
-        ///     println!("\t{}", mech[i]);
-        ///     i += 1;
-        ///     }
+        ///         for i in 0..mech.len() {
+        ///             println!("\t{}", mech[i]);
+        ///         }
         /// }
         /// ```
         pub fn game() {
@@ -105,11 +99,9 @@ pub mod phaktionz {
         ///    String::from("L/x: Limit x per turn"),
         ///    String::from("Lx: Limit x per match")
         ///];
-        ///    let mut i = 0;
-        ///    while i < 11 {
-        ///        println!("\t{}", keywords[i]);
-        ///        i += 1;
-        ///    }
+        ///     for i in 0..keywords.len() {
+        ///         println!("\t{}", keywords[i]);
+        ///     }  
         ///}
         ///
         /// ```
@@ -140,11 +132,9 @@ pub mod phaktionz {
         ///    String::from("• Abilities that include ’CP’ refer to Creation Pile"),
         ///    String::from("• CP Cards are identified with CP in the top left along where Tier or Invocation type is located.")
         ///];
-        ///    let mut i = 0;
-        ///    while i < 4 {
-        ///        println!("\t{}", cp[i]);
-        ///        i += 1;
-        ///    }
+        ///     for i in 0..cp.len() {
+        ///         println!("\t{}", cp[i]);
+        ///     }
         ///}
         /// ```
         pub fn c_pile() {
