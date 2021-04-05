@@ -52,17 +52,13 @@ pub mod phaktionz {
         /// ```
         pub fn types(summmons: [Card; 2], invocations: [Card; 4]) {
             println!("Summmons: ");
-            let mut i = 0;
             // This will cycle through all the struct Card fields
-            while i < 2 {
+            for i in 0..summmons.len(){
                 println!("\t{}: {}", summmons[i].name, summmons[i].description);
-                i += 1;
             }
-            i = 0;
             println!("Invocations");
-            while i < 4 {
+            for i in 0..invocations.len(){
                 println!("\t{}: {}", invocations[i].name, invocations[i].description);
-                i += 1;
             }
         }
         ///This is used to describe the game mechanics of Phaktionz
@@ -90,10 +86,8 @@ pub mod phaktionz {
             String::from("• If a card’s ability were to break one of these rules, the card’s ability takes precedence."),
             String::from( "• When battling, a Player takes DMG equal to the difference between the Summons.\n\t– If a Summon that battles has less DMG than the opposing, no DMG is dealt.\n\t– If a Summon that battles has more DMG than the opposing, the Opponent takes the difference, and the Summon is demoted, except if it’s Tier 3+.")
         ];
-            let mut i = 0;
-            while i < 5 {
+            for i in 0..mech.len(){
                 println!("\t{}", mech[i]);
-                i += 1;
             }
         }
         /// This describes the various terms in Phaktionz
@@ -134,10 +128,8 @@ pub mod phaktionz {
             String::from("L/x: Limit x per turn"),
             String::from("Lx: Limit x per match")
         ];
-            let mut i = 0;
-            while i < 11 {
+            for i in 0..keywords.len(){
                 println!("\t{}", keywords[i]);
-                i += 1;
             }
         }
         /// This describe the Creation Pile
@@ -163,10 +155,8 @@ pub mod phaktionz {
             String::from("• Abilities that include ’CP’ refer to Creation Pile"),
             String::from("• CP Cards are identified with CP in the top left along where Tier or Invocation type is located.")
         ];
-            let mut i = 0;
-            while i < 4 {
+            for i in 0..cp.len() {
                 println!("\t{}", cp[i]);
-                i += 1;
             }
         }
         /// This describes the Promote Mechanic
@@ -220,10 +210,8 @@ pub mod phaktionz {
                 String::from("Does all commands above"),
             ];
             println!("Available Options for Rules: ");
-            let mut i = 0;
-            while i < 6 {
+            for i in 0..opt.len(){
                 println!("\t{}: {}", opt[i], desc[i]);
-                i += 1;
             }
         }
         /// This is used to process all the rule commands
@@ -237,6 +225,8 @@ pub mod phaktionz {
                 String::from("all"),
                 String::from("list"),
             ];
+
+            
             if option == opt[0] {
                 types(summmons, invocations);
             } else if option == opt[1] {
@@ -259,6 +249,7 @@ pub mod phaktionz {
                 list();
             }
         }
+        
     }
     
 
@@ -296,4 +287,6 @@ pub mod phaktionz {
         }
         
     }
+
+    
 }

@@ -1,5 +1,3 @@
-#[crate_id="tomorrow_study"]
-#[crate_type="lib"]
 pub mod tomorrow_study{
     pub struct Content {
         pub name: String,
