@@ -1,15 +1,15 @@
-pub mod tomorrow_study{
+pub mod tomorrow_study {
     pub struct Content {
         pub name: String,
         pub author: String,
         pub id: String,
         pub url: String,
     }
-    
+
     pub struct Category {
         pub cont: [Content; 2],
     }
-    
+
     pub fn List(cont_type: Category) {
         let mut i = 0;
         println!("| Name | Author | ID |");

@@ -7,7 +7,7 @@ mod tests {
     }
 }*/
 mod ts;
-pub use ts::tomorrow_study;
+pub use ts::tomorrow_study::{self, *};
 
 mod phk;
-pub use phk::phaktionz;
+pub use phk::phaktionz::{self, *};

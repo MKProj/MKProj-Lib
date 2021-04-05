@@ -1,4 +1,3 @@
-
 pub mod phaktionz {
     //! Phaktionz CLI is goaled to bring information on Phaktionz directly to your system
     pub mod rules {
@@ -14,7 +13,7 @@ pub mod phaktionz {
             pub name: String,
             pub description: String,
         }
-    
+
         /// This is used to describe the types in Summons and Invocations  
         /// - Summon Types:
         ///     - Striker
@@ -53,11 +52,11 @@ pub mod phaktionz {
         pub fn types(summmons: [Card; 2], invocations: [Card; 4]) {
             println!("Summmons: ");
             // This will cycle through all the struct Card fields
-            for i in 0..summmons.len(){
+            for i in 0..summmons.len() {
                 println!("\t{}: {}", summmons[i].name, summmons[i].description);
             }
             println!("Invocations");
-            for i in 0..invocations.len(){
+            for i in 0..invocations.len() {
                 println!("\t{}: {}", invocations[i].name, invocations[i].description);
             }
         }
@@ -86,7 +85,7 @@ pub mod phaktionz {
             String::from("• If a card’s ability were to break one of these rules, the card’s ability takes precedence."),
             String::from( "• When battling, a Player takes DMG equal to the difference between the Summons.\n\t– If a Summon that battles has less DMG than the opposing, no DMG is dealt.\n\t– If a Summon that battles has more DMG than the opposing, the Opponent takes the difference, and the Summon is demoted, except if it’s Tier 3+.")
         ];
-            for i in 0..mech.len(){
+            for i in 0..mech.len() {
                 println!("\t{}", mech[i]);
             }
         }
@@ -112,8 +111,8 @@ pub mod phaktionz {
         ///        i += 1;
         ///    }
         ///}
-        /// 
-        /// ``` 
+        ///
+        /// ```
         pub fn terms() {
             let keywords:[String; 11] = [
             String::from("Summons: Units that battle in the battlefield"),
@@ -128,7 +127,7 @@ pub mod phaktionz {
             String::from("L/x: Limit x per turn"),
             String::from("Lx: Limit x per match")
         ];
-            for i in 0..keywords.len(){
+            for i in 0..keywords.len() {
                 println!("\t{}", keywords[i]);
             }
         }
@@ -210,7 +209,7 @@ pub mod phaktionz {
                 String::from("Does all commands above"),
             ];
             println!("Available Options for Rules: ");
-            for i in 0..opt.len(){
+            for i in 0..opt.len() {
                 println!("\t{}: {}", opt[i], desc[i]);
             }
         }
@@ -226,7 +225,6 @@ pub mod phaktionz {
                 String::from("list"),
             ];
 
-            
             if option == opt[0] {
                 types(summmons, invocations);
             } else if option == opt[1] {
@@ -249,44 +247,40 @@ pub mod phaktionz {
                 list();
             }
         }
-        
     }
-    
 
-
-    pub mod story{
-    //! This is used to describe the various episode concepts
-    /// To give info on how to access each episode concept
-    /// ```rust
-    ///pub struct Episode {
-    ///     pub name: String,
-    ///     pub season: i32,
-    ///     pub episode: i32,
-    ///     pub url: String,
-    ///  }
-    /// ```
+    pub mod story {
+        //! This is used to describe the various episode concepts
+        /// To give info on how to access each episode concept
+        /// ```rust
+        ///pub struct Episode {
+        ///     pub name: String,
+        ///     pub season: i32,
+        ///     pub episode: i32,
+        ///     pub url: String,
+        ///  }
+        /// ```
         pub struct Episode {
             pub name: String,
             pub season: i32,
             pub episode: i32,
             pub url: String,
         }
-    /// This is used to access the pdf files in a temporary access way  
-    /// 
-    /// You will need the url that is provided by the Episode struct, and pdf application that is 
-    /// required by the story subcommand. 
-    /// 
-    /// ```rust
-    /// pub fn read(url: String, pdf_application: String) {
-    ///     let read = std::process::Command::new(pdf_application).arg(url).output();
-    ///     // This issues a command line command to use the pdf application and load the pdf with url
-    /// }
-    /// ```
+        /// This is used to access the pdf files in a temporary access way  
+        ///
+        /// You will need the url that is provided by the Episode struct, and pdf application that is
+        /// required by the story subcommand.
+        ///
+        /// ```rust
+        /// pub fn read(url: String, pdf_application: String) {
+        ///     let read = std::process::Command::new(pdf_application).arg(url).output();
+        ///     // This issues a command line command to use the pdf application and load the pdf with url
+        /// }
+        /// ```
         pub fn read(url: String, pdf_application: String) {
-            let read = std::process::Command::new(pdf_application).arg(url).output();
+            let read = std::process::Command::new(pdf_application)
+                .arg(url)
+                .output();
         }
-        
     }
-
-    
 }
