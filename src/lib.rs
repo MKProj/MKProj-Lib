@@ -12,5 +12,5 @@ pub use ts::tomorrow_study::{self, *};
 mod phk;
 pub use phk::phaktionz::{self, *};
 
-mod uniconv;
-pub use uniconv::uniconv::*;
+mod uc;
+pub use uc::uniconv::{self, *};
