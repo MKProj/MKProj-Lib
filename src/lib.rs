@@ -13,4 +13,4 @@ mod phk;
 pub use phk::phaktionz::{self, *};
 
 mod uniconv;
-pub use uniconv::uniconv::{self, *};
+pub use uniconv::uniconv::*;
