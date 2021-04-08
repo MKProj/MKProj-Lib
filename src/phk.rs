@@ -2,15 +2,15 @@ pub mod phaktionz {
     //! Phaktionz CLI is goaled to bring information on Phaktionz directly to your system
 
     pub fn update() {
+    /// Updates Phaktionz CLI
         let update = std::process::Command::new("cargo")
             .arg("install")
             .arg("phaktionz")
-            .output();
-        println!("status: {}", update.status);
-        io::stdout().write_all(&update.stdout).unwrap();
-        io::stderr().write_all(&update.stderr).unwrap();
+            .spawn();
+       // std::io::stdout().write_all(&update.stdout).unwrap();
+       // std::io::stderr().write_all(&update.stderr).unwrap();
 
-        assert!(output.status.success());
+       // assert!(output.status.success());
     }
     pub mod rules {
         //! The Rules Module is based on describing various aspects of the game
