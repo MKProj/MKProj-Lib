@@ -1,4 +1,5 @@
 pub mod tomorrow_study {
+    //! To bring Tomorrow Study's material directly to your system
     pub struct Content {
         pub name: String,
         pub author: String,

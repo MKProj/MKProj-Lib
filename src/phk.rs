@@ -1,5 +1,12 @@
 pub mod phaktionz {
     //! Phaktionz CLI is goaled to bring information on Phaktionz directly to your system
+
+    pub fn update() {
+        let update = std::process::Command::new("cargo")
+            .arg("install")
+            .arg("phaktionz")
+            .output();
+    }
     pub mod rules {
         //! The Rules Module is based on describing various aspects of the game
         /// This is used to describe the types of Cards (Summons, Invocations)
@@ -277,35 +284,20 @@ pub mod phaktionz {
     pub mod book {
         //! This is used to initialize and serve the phaktionz markdown book
         pub fn init() {
-            let wget = std::process::Command::new("wget")
-                .arg("https://github.com/MKProj/Getting-Started/blob/main/depinstall.sh")
-                .output();
-            let dep_install = std::process::Command::new("bash")
-                .arg("depinstall.sh")
-                .output();
-            let rmdep = std::process::Command::new("rm")
-                .arg("depinstall.sh")
-                .output();
-            let b: bool = std::path::Path::new("~/MKProjects").is_dir();
-            if b == false {
-                let mkdir = std::process::Command::new("mkdir")
-                    .arg("~/MKProjects")
-                    .output();
-            }
             let gitclone = std::process::Command::new("git")
                 .arg("clone")
                 .arg("https://github.com/MKProj/Phaktionz-Book.git")
                 .output();
             let mv = std::process::Command::new("mv")
                 .arg("Phaktionz-Book")
-                .arg("~/MKProjects/")
+                .arg("~/")
                 .output();
         }
         pub fn serve() {
             println!("Make sure you have first ran phaktionz init!");
             let serve = std::process::Command::new("mdbook")
                 .arg("serve")
-                .arg("~/MKProjects/Phaktionz-Book")
+                .arg("~/Phaktionz-Book")
                 .output();
         }
     }

@@ -7,10 +7,10 @@ mod tests {
     }
 }*/
 mod ts;
-pub use ts::tomorrow_study::{self, *};
+pub use ts::tomorrow_study;
 
 mod phk;
-pub use phk::phaktionz::{self, *};
+pub use phk::phaktionz;
 
 mod uc;
-pub use uc::uniconv::{self, *};
+pub use uc::uniconv;
