@@ -2,15 +2,11 @@ pub mod phaktionz {
     //! Phaktionz CLI is goaled to bring information on Phaktionz directly to your system
 
     pub fn update() {
-    /// Updates Phaktionz CLI
+        /// Updates Phaktionz CLI
         let update = std::process::Command::new("cargo")
             .arg("install")
             .arg("phaktionz")
             .spawn();
-       // std::io::stdout().write_all(&update.stdout).unwrap();
-       // std::io::stderr().write_all(&update.stderr).unwrap();
-
-       // assert!(output.status.success());
     }
     pub mod rules {
         //! The Rules Module is based on describing various aspects of the game
@@ -292,18 +288,18 @@ pub mod phaktionz {
             let gitclone = std::process::Command::new("git")
                 .arg("clone")
                 .arg("https://github.com/MKProj/Phaktionz-Book.git")
-                .output();
+                .spawn();
             let mv = std::process::Command::new("mv")
                 .arg("Phaktionz-Book")
                 .arg("~/")
-                .output();
+                .spawn();
         }
         pub fn serve() {
             println!("Make sure you have first ran phaktionz init!");
             let serve = std::process::Command::new("mdbook")
                 .arg("serve")
                 .arg("~/Phaktionz-Book")
-                .output();
+                .spawn();
         }
     }
 }
