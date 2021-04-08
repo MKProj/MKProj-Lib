@@ -329,7 +329,7 @@ pub mod phaktionz {
     pub mod profiles {
         //! This is used to make the character profiles
         const SIZE: usize = 11;
-        pub fn prof(option: String, character: [Profile; SIZE]) {
+        pub fn prof(option: String, characters: [Profile; SIZE]) {
             for i in 0..characters.len() {
                 if option == characters[i].fname {
                     println!(
