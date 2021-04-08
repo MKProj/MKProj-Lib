@@ -289,16 +289,12 @@ pub mod phaktionz {
                 .arg("clone")
                 .arg("https://github.com/MKProj/Phaktionz-Book.git")
                 .spawn();
-            let mv = std::process::Command::new("mv")
-                .arg("Phaktionz-Book")
-                .arg("~/")
-                .spawn();
         }
         pub fn serve() {
             println!("Make sure you have first ran phaktionz init!");
             let serve = std::process::Command::new("mdbook")
                 .arg("serve")
-                .arg("~/Phaktionz-Book")
+                .arg("Phaktionz-Book")
                 .spawn();
         }
     }
