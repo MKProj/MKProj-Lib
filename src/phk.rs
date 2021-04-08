@@ -6,6 +6,11 @@ pub mod phaktionz {
             .arg("install")
             .arg("phaktionz")
             .output();
+        println!("status: {}", update.status);
+        io::stdout().write_all(&update.stdout).unwrap();
+        io::stderr().write_all(&update.stderr).unwrap();
+
+        assert!(output.status.success());
     }
     pub mod rules {
         //! The Rules Module is based on describing various aspects of the game
