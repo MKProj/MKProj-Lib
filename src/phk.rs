@@ -298,4 +298,24 @@ pub mod phaktionz {
                 .spawn();
         }
     }
+
+    pub mod info {
+        //! This is used to give information about the Factions Categories
+        pub struct Category {
+            pub name: String,
+            pub desc: String,
+        }
+
+        pub fn Info(name: String, cat: [Category; 3]) {
+            let mut i = 0;
+            while i < cat.len() {
+                if name == cat[i].name {
+                    println!("{}", cat[i].desc);
+                } else if name == "list" {
+                    println!("\t*{}", cat[i].name);
+                }
+                i += 1;
+            }
+        }
+    }
 }
