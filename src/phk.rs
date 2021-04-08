@@ -2,7 +2,14 @@ pub mod phaktionz {
     //! Phaktionz CLI is goaled to bring information on Phaktionz directly to your system
 
     pub fn update() {
-        /// Updates Phaktionz CLI
+        //! Updates Phaktionz CLI
+        ///
+        /// The Update functions essentially just cargo installs Phaktionz
+        /// let update = std::process::Command::new("cargo")
+        ///     .arg("install")
+        ///     .arg("phaktionz")
+        ///     .spawn();
+        ///  }
         let update = std::process::Command::new("cargo")
             .arg("install")
             .arg("phaktionz")
@@ -316,6 +323,38 @@ pub mod phaktionz {
                 }
                 i += 1;
             }
+        }
+    }
+
+    pub mod profiles {
+        //! This is used to make the character profiles
+        const SIZE: usize = 11;
+        pub fn prof(option: String, character: [Profile; SIZE]) {
+            for i in 0..characters.len() {
+                if option == characters[i].fname {
+                    println!(
+                        "Name: {} {}\nAge: {}\nHeight: {}\nFaction: {}\nDecks: {}\nDescription: \n{}\n",
+                        characters[i].fname,
+                        characters[i].lname,
+                        characters[i].age,
+                        characters[i].height,
+                        characters[i].factions,
+                        characters[i].decks,
+                        characters[i].description
+                    );
+                } else if option == "list" {
+                    println!("\t*{}", characters[i].fname);
+                }
+            }
+        }
+        pub struct Profile {
+            pub fname: String,
+            pub lname: String,
+            pub age: i64,
+            pub height: String,
+            pub factions: String,
+            pub decks: String,
+            pub description: String,
         }
     }
 }
