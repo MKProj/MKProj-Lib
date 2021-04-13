@@ -3,17 +3,27 @@ pub mod phaktionz {
 
     pub fn update() {
         //! Updates Phaktionz CLI
-        ///
-        /// The Update functions essentially just cargo installs Phaktionz
-        /// let update = std::process::Command::new("cargo")
-        ///     .arg("install")
-        ///     .arg("phaktionz")
-        ///     .spawn();
-        ///  }
+        //!
+        //! The Update functions essentially just cargo installs Phaktionz
+        //!
+        //! ```rust
+        //! let update = std::process::Command::new("cargo")
+        //!     .arg("install")
+        //!     .arg("phaktionz")
+        //!     .spawn();
+        //! ```
         let update = std::process::Command::new("cargo")
             .arg("install")
             .arg("phaktionz")
             .spawn();
+    }
+    pub fn fetch(sub_command: String, format: String) {
+        //! Fetches different aspects in HTML, EPUB or PDF
+        let url = format!(
+            "https://github.com/MKProj/Phaktionz/raw/main/DOCS/{}.{}",
+            sub_command, format
+        );
+        let wget = std::process::Command::new("wget").arg(url).spawn();
     }
     pub mod rules {
         //! The Rules Module is based on describing various aspects of the game
