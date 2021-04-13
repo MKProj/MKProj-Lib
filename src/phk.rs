@@ -19,10 +19,10 @@ pub mod phaktionz {
     }
     pub fn fetch(sub_command: String, format: String) {
         //! Fetches different aspects in HTML, EPUB or PDF
-        let url: String = format!(
+        /*let url: String = format!(
             "https://github.com/MKProj/Phaktionz/raw/main/DOCS/{}.{}",
             sub_command, format
-        );
+        );*/
         let wget = std::process::Command::new("wget")
             .arg("https://github.com/MKProj/Phaktionz/raw/main/DOCS/rules.pdf")
             .spawn();
