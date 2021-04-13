@@ -23,7 +23,7 @@ pub mod phaktionz {
             + &sub_command
             + "."
             + &format;
-        let wget = std::process::Command::new("wget").arg(url).spawn();
+        let wget = std::process::Command::new("wget").arg(url).output();
     }
     pub mod rules {
         //! The Rules Module is based on describing various aspects of the game
