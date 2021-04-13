@@ -19,7 +19,10 @@ pub mod phaktionz {
     }
     pub fn fetch(sub_command: String, format: String) {
         //! Fetches different aspects in HTML, EPUB or PDF
-        let url = "https://github.com/MKProj/Phaktionz/raw/main/DOCS/" + sub_command + "." + format;
+        let url = "https://github.com/MKProj/Phaktionz/raw/main/DOCS/".to_owned()
+            + &sub_command
+            + "."
+            + &format;
         let wget = std::process::Command::new("wget").arg(url).spawn();
     }
     pub mod rules {
