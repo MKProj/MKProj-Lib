@@ -1,3 +1,4 @@
+#[allow(unused_variables)]
 pub mod phaktionz {
     //! Phaktionz CLI is goaled to bring information on Phaktionz directly to your system
 
@@ -19,13 +20,11 @@ pub mod phaktionz {
     }
     pub fn fetch(sub_command: String, format: String) {
         //! Fetches different aspects in HTML, EPUB or PDF
-        /*let url: String = format!(
+        let url: String = format!(
             "https://github.com/MKProj/Phaktionz/raw/main/DOCS/{}.{}",
             sub_command, format
-        );*/
-        let wget = std::process::Command::new("wget")
-            .arg("https://github.com/MKProj/Phaktionz/raw/main/DOCS/rules.pdf")
-            .spawn();
+        );
+        let mut resp = reqwest::get(url).expect("request failed");
     }
     pub mod rules {
         //! The Rules Module is based on describing various aspects of the game
@@ -340,8 +339,7 @@ pub mod phaktionz {
 
     pub mod profiles {
         //! This is used to make the character profiles
-        const SIZE: usize = 13;
-        pub fn prof(option: String, characters: [Profile; SIZE]) {
+        pub fn prof(option: String, characters: Vec<Profile>) {
             for i in 0..characters.len() {
                 if option == characters[i].fname {
                     println!(
