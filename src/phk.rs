@@ -24,7 +24,7 @@ pub mod phaktionz {
             "https://github.com/MKProj/Phaktionz/raw/main/DOCS/{}.{}",
             sub_command, format
         );
-        let mut resp = reqwest::get(url).expect("request failed");
+        //let mut resp = reqwest::get(url).await;
     }
     pub mod rules {
         //! The Rules Module is based on describing various aspects of the game
