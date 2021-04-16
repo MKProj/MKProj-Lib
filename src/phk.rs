@@ -50,13 +50,14 @@ pub mod phaktionz {
         ///     - Weapon
         ///     - Realm  
         ///
-        /// If a new card type would be made, then a change could look like this:
-        /// ```rust
-        /// // Before
-        /// pub fn types(summmons: [Card; 2], invocations: [Card; 4])
-        /// // After (example new summon type)
-        /// pub fn types(summmons: [Card; 3], invocations: [Card; 4])
-        /// ```
+        /// If a new card type would be made, then a change could look like this:  
+        ///
+        /// Before
+        /// `pub fn types(summmons: [Card; 2], invocations: [Card; 4])`  
+        ///
+        /// After (example new summon type)
+        /// `pub fn types(summmons: [Card; 3], invocations: [Card; 4])`
+        ///
         ///
         /// ```rust
         ///     pub fn types(summmons: [Card; 2], invocations: [Card; 4]) {
