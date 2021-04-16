@@ -57,21 +57,6 @@ pub mod phaktionz {
         ///
         /// After (example new summon type)
         /// `pub fn types(summmons: [Card; 3], invocations: [Card; 4])`
-        ///
-        ///
-        /// ```rust
-        ///     pub fn types(summmons: [Card; 2], invocations: [Card; 4]) {
-        ///         println!("Summmons: ");
-        ///        // This will cycle through all the struct Card fields
-        ///        for i in 0..summmons.len() {
-        ///            println!("\t{}: {}", summmons[i].name, summmons[i].description);
-        ///        }
-        ///        println!("Invocations");
-        ///        for i in 0..invocations.len() {
-        ///            println!("\t{}: {}", invocations[i].name, invocations[i].description);
-        ///        }
-        /// }
-        /// ```
         pub fn types(summmons: [Card; 2], invocations: [Card; 4]) {
             println!("Summmons: ");
             // This will cycle through all the struct Card fields
