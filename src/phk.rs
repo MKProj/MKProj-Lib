@@ -18,13 +18,16 @@ pub mod phaktionz {
             .arg("phaktionz")
             .spawn();
     }
-    pub fn fetch(sub_command: String, format: String) {
+    pub fn fetch(sub_cmd: String, format: String) {
         //! Fetches different aspects in HTML, EPUB or PDF
-        let url: String = format!(
+        let _url: String = format!(
             "https://github.com/MKProj/Phaktionz/raw/main/DOCS/{}.{}",
-            sub_command, format
+            sub_cmd, format
         );
-        //let mut resp = reqwest::get(url).await;
+        let _wget = std::process::Command::new("wget")
+            .arg(&_url)
+            .spawn()
+            .expect("failed to execute process");
     }
     pub mod rules {
         //! The Rules Module is based on describing various aspects of the game
