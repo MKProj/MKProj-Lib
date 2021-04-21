@@ -5,4 +5,4 @@ echo "Message: "
 read msg 
 git commit -m $msg
 git push -u origin
-git push -u lab
+#git push -u lab

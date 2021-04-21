@@ -251,7 +251,7 @@ pub mod phaktionz {
         }
     }
 
-    pub mod story {
+    /*pub mod story {
         //! This is used to describe the various episode concepts
         /// To give info on how to access each episode concept
         /// ```rust
@@ -268,7 +268,7 @@ pub mod phaktionz {
             pub episode: i32,
             pub url: String,
         }
-        /// This is used to access the pdf files in a temporary access way  
+        /// This is used to access the pdf files in a temporary access way
         ///
         /// You will need the url that is provided by the Episode struct, and pdf application that is
         /// required by the story subcommand.
@@ -284,7 +284,7 @@ pub mod phaktionz {
                 .arg(url)
                 .output();
         }
-    }
+    }*/
 
     pub mod book {
         //! This is used to initialize and serve the phaktionz markdown book
@@ -310,7 +310,7 @@ pub mod phaktionz {
             pub desc: String,
         }
 
-        pub fn Info(name: String, cat: [Category; 3]) {
+        pub fn Info(name: String, cat: Vec<Category>) {
             let mut i = 0;
             while i < cat.len() {
                 if name == cat[i].name {
